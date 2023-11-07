@@ -814,7 +814,9 @@ public class ImagePickerDelegate
         if (path.mimeType == null || !path.mimeType.startsWith("video/")) {
           finalPath = getResizedImagePath(path.path, localImageOptions);
         }
-        finalPaths.add(finalPath);
+        if(finalPath != null) {
+          finalPaths.add(finalPath);
+        }
       }
       finishWithListSuccess(finalPaths);
     } else {
